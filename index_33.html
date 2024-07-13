@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn More</title>
+</head>
+<body>
+    <video autoplay id="myVideo">
+        <source src="qinche.mp4" type="video/mp4">
+    </video>
+    <div class="content">
+        <button id="myBtn" onclick="myFunction()">Play</button>
+    </div>
+
+<style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+    *{
+        font-family: 'Poppins', sans-serif;
+    }
+
+    #myVideo {
+        position: fixed;
+        /*z-index: -1;*/
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    .content {
+        position: fixed;
+        bottom: 0;
+        background: rgb(255 255 255 / 0%);
+        color: #f1f1f1;
+        width: 100%;
+        padding: 20px, 20px;
+    }
+  
+    #myBtn {
+        width: 130px;
+        font-size: small;
+        padding: 10px;
+        border: none;
+        border-radius: 30px;
+        background: rgba(82, 81, 107, 0.336);
+        color: white;
+        cursor: pointer;
+        justify-content: space-between;
+    }
+  
+    #myBtn:hover {
+        background: #ddd;
+        color: black;
+    }
+
+    @media (min-aspect-ratio: 16/9) {
+        #myVideo {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    @media (max-aspect-ratio: 16/9) {
+        #myVideo {
+            width: auto;
+            height: 100%;
+        }
+    }
+
+    @media (max-width: 767px) {
+        #myVideo {
+            display: none;
+        }
+        body {
+            background-url: ;
+            background-size: cover;
+        }
+    }
+
+</style>
+
+<script>
+
+    var video = document.getElementById("myVideo");
+    var btn = document.getElementById("myBtn")
+
+    function myFunction() {
+        if (video.paused) {
+            video.play();
+            btn.innerHTML = "Pause";
+        }else{
+            video.pause();
+            btn.innerHTML = "Play";
+        }
+    }
+
+
+</script>
+</body>
+</html>
